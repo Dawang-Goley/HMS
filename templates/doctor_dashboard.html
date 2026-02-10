@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Doctor Dashboard</h2>
+
+<div class="card">
+<h3>Your Appointments</h3>
+<ul>
+{% for a in appointments %}
+<li>{{ a.patient }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<a class="btn danger" href="/logout">Logout</a>
+{% endblock %}

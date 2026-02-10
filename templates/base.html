@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kristu Clinic</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME ICONS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+
+    <!-- LOGO SECTION -->
+    <div class="logo-box">
+        <img src="{{ url_for('static', filename='images/doctor-logo.jpg') }}" alt="Doctor Logo">
+        <span>HMS</span>
+    </div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#features">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+
+        <li class="dropdown">
+            <a href="#">Logins ▾</a>
+            <div class="dropdown-menu">
+                <a href="/patient/login">Patient</a>
+                <a href="/doctor/login">Doctor</a>
+                <a href="/admin/login">Admin</a>
+            </div>
+        </li>
+    </ul>
+
+    <!-- CTA BUTTON -->
+    <a href="/patient/login" class="btn-primary">Book an Appointment</a>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="footer">
+    <div>
+        <h4>Useful Links</h4>
+        <a>About us</a>
+        <a>Services</a>
+        <a>Logins</a>
+        <a>Gallery</a>
+        <a>Contact us</a>
+    </div>
+
+    <div>
+        <h4>Contact Us</h4>
+        <p>K.Narayana Pura, Kothnur, Bengaluru - 560077</p>
+        <p>Phone: 7029790774</p>
+        <p>Email: kristuclinic@gmail.com</p>
+        <p>Timing: 9 am to 8 pm</p>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

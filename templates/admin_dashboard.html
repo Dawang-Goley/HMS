@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<div class="card">
+<h3>Users</h3>
+<ul>
+{% for u in users %}
+<li>{{ u }} — {{ users[u]['role'] }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="card">
+<h3>Appointments</h3>
+<ul>
+{% for a in appointments %}
+<li>{{ a.patient }} → {{ a.doctor }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<a class="btn danger" href="/logout">Logout</a>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="auth-container">
+    <h2 class="auth-title">HMS | Patient Login</h2>
+
+    <div class="auth-card">
+        <h3>Sign in to your account</h3>
+        <p class="auth-subtitle">
+            Please enter your email and password to log in.
+        </p>
+
+        <form method="POST">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <a href="#" class="forgot">Forgot Password ?</a>
+
+            <button type="submit" class="login-submit">
+                Login →
+            </button>
+        </form>
+
+        <p class="signup-link">
+            Don't have an account yet?
+            <a href="/signup">Create an account</a>
+        </p>
+
+        <p class="auth-footer">HOSPITAL MANAGEMENT SYSTEM.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-overlay">
+        <h1>Kristu's Clinic</h1>
+    </div>
+</section>
+
+
+<!-- LOGIN SECTION -->
+<section class="section">
+    <h2 class="section-title">Logins</h2>
+
+    <div class="login-grid">
+
+        <!-- Patient -->
+
+    <div class="login-card">
+        <img src="{{ url_for('static', filename='images/patient.jpg') }}">
+        <div class="login-card-box">
+            <h3>Patient Login</h3>
+            <a href="/patient/login" class="login-btn">Click Here</a>
+        </div>
+    </div>
+
+    <div class="login-card">
+        <img src="{{ url_for('static', filename='images/doctor.jpg') }}">
+        <div class="login-card-box">
+            <h3>Doctors login</h3>
+            <a href="#" class="login-btn">Click Here</a>
+        </div>
+    </div>
+
+    <div class="login-card">
+        <img src="{{ url_for('static', filename='images/admin.jpg') }}">
+        <div class="login-card-box">
+            <h3>Admin Login</h3>
+            <a href="#" class="login-btn">Click Here</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- FEATURES -->
+<section class="section" id="features">
+    <h2>Our Key Features</h2>
+    <p class="subtitle">Take a look at some of our key features</p>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h4>Cardiology</h4>
+        </div>
+
+        <div class="feature-item">
+            <i class="fa-solid fa-bone"></i>
+            <h4>Orthopaedic</h4>
+        </div>
+
+        <div class="feature-item">
+            <i class="fa-solid fa-brain"></i>
+            <h4>Neurologist</h4>
+        </div>
+
+        <div class="feature-item">
+            <i class="fa-solid fa-pills"></i>
+            <h4>Pharma Pipeline</h4>
+        </div>
+
+        <div class="feature-item">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h4>Pharma Team</h4>
+        </div>
+
+        <div class="feature-item">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <h4>High Quality Treatments</h4>
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="about animate">
+    <img src="{{ url_for('static', filename='images/about.jpg') }}">
+    <div>
+        <h2>About Our Clinic</h2>
+        <p>
+            Kristu’s Clinic is committed to providing compassionate, reliable,
+            and patient-centered healthcare services. With a focus on quality
+            treatment and personalized care, the clinic aims to ensure the health,
+            comfort, and well-being of every patient. By combining medical expertise
+            with a caring approach, Kristu’s Clinic strives to create a safe and
+            welcoming environment for the community.
+        </p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section animate">
+    <h2>Our Gallery</h2>
+    <div class="gallery-grid">
+        <img src="{{ url_for('static', filename='images/gallery1.jpg') }}">
+        <img src="{{ url_for('static', filename='images/gallery2.jpg') }}">
+        <img src="{{ url_for('static', filename='images/gallery3.jpg') }}">
+        <img src="{{ url_for('static', filename='images/gallery4.jpg') }}">
+        <img src="{{ url_for('static', filename='images/gallery5.jpg') }}">
+        <img src="{{ url_for('static', filename='images/gallery6.jpg') }}">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section animate">
+    <h2>Contact Form</h2>
+    <form class="contact-form">
+        <input placeholder="Enter Name">
+        <input placeholder="Enter Email Address">
+        <input placeholder="Enter Mobile Number">
+        <textarea placeholder="Enter Your Message"></textarea>
+        <button class="btn">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}

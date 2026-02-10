@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Patient Dashboard</h2>
+
+<form method="post" class="card">
+    <select name="doctor">
+        {% for d in doctors %}
+        <option>{{ d }}</option>
+        {% endfor %}
+    </select>
+    <button class="btn">Book Appointment</button>
+</form>
+
+<p class="success">{{ msg }}</p>
+
+<div class="card">
+<h3>Your Appointments</h3>
+<ul>
+{% for a in appointments %}
+<li>{{ a.doctor }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<a class="btn danger" href="/logout">Logout</a>
+{% endblock %}

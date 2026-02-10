@@ -1,0 +1,307 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #555;
+    line-height: 1.6;
+    background:#fff;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 70px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box img {
+    height: 38px;
+    width: auto;
+}
+
+.logo-box span {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00a8a8;
+}
+
+.btn-primary {
+    background: #00a8a8;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #009090;
+}
+
+/* =========================
+   HERO SECTION  ✅ FIXED
+========================= */
+.hero {
+    position: relative;
+    height: 85vh;
+    background-image: url("../images/hero.jpg"); /* IMAGE NOW VISIBLE */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* teal diagonal overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 65%;
+    background: rgba(0, 168, 168, 0.88);
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    padding-left: 110px;
+}
+
+/* hero text */
+.hero-overlay h1 {
+    color: #fff;
+    font-size: 54px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    padding: 90px 80px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 34px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.section p.subtitle {
+    color: #888;
+    font-size: 15px;
+}
+
+/* =========================
+   LOGIN SECTION  ✅ MATCHED
+========================= */
+.section-title {
+    font-size: 38px;
+    font-weight: 500;
+    color: #7a7a7a;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.login-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.login-card {
+    width: 360px;
+    text-align: center;
+}
+
+.login-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.login-card-box {
+    background: #fff;
+    width: 86%;
+    margin: -45px auto 0;
+    padding: 30px 20px 32px;
+    box-shadow: 0 14px 32px rgba(0,0,0,.12);
+}
+
+.login-card-box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 18px;
+}
+
+.login-btn {
+    display: inline-block;
+    background: #00a8a8;
+    color: #fff;
+    padding: 9px 24px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0,168,168,.35);
+    transition: .3s;
+}
+
+.login-btn:hover {
+    background: #009191;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FEATURES (ICONS)
+========================= */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 60px;
+    margin-top: 70px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 42px;
+    color: #00a8a8;
+    margin-bottom: 18px;
+}
+
+.feature-item h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 90px;
+}
+
+.about img {
+    width: 50%;
+    border-radius: 6px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform .35s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-form {
+    max-width: 650px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: #fff;
+    display: block;
+    margin: 8px 0;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: .8s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
