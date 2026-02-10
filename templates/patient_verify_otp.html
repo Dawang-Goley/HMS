@@ -1,11 +1,64 @@
-{% extends "base.html" %}
-{% block content %}
-<h2>Verify OTP</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Email</title>
 
-<form method="post" class="card">
-    <input type="text" name="otp" placeholder="Enter OTP" required>
-    <button class="btn">Verify</button>
-</form>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-<p class="error">{{ msg }}</p>
-{% endblock %}
+    <style>
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#f7f9fb;
+            font-family:'Poppins',sans-serif;
+        }
+        .box{
+            background:#fff;
+            padding:35px;
+            width:100%;
+            max-width:420px;
+            box-shadow:0 12px 30px rgba(0,0,0,0.12);
+            border-radius:6px;
+        }
+        input{
+            width:100%;
+            padding:12px;
+            margin:15px 0;
+            border:1px solid #ddd;
+            border-radius:4px;
+        }
+        button{
+            background:#00a8a8;
+            color:#fff;
+            padding:10px 22px;
+            border:none;
+            border-radius:4px;
+            cursor:pointer;
+        }
+        .error{
+            color:red;
+            font-size:14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h3>Email Verification</h3>
+    <p>Please enter the OTP sent to your email.</p>
+
+    <form method="post">
+        <input type="text" name="otp" placeholder="Enter OTP" required>
+        <button type="submit">Verify OTP</button>
+    </form>
+
+    {% if msg %}
+        <p class="error">{{ msg }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

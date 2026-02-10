@@ -1,5 +1,6 @@
 import os
 import random
+import uuid
 import smtplib
 from email.message import EmailMessage
 from flask import Flask, render_template, request, redirect, session, url_for
@@ -84,6 +85,14 @@ def patient_login():
 
     return render_template("patient_login.html", msg=msg)
 
+@app.route("/patient/register", methods=["GET", "POST"])
+def patient_register():
+    if request.method == "POST":
+        # Later: save to database / OTP verification
+        return redirect("/patient/login")
+
+    return render_template("patient_register.html")
+
 @app.route("/patient/dashboard", methods=["GET", "POST"])
 def patient_dashboard():
     if session.get("role") != "patient":
@@ -113,28 +122,42 @@ def patient_dashboard():
 
 @app.route("/doctor/login", methods=["GET", "POST"])
 def doctor_login():
-    msg = ""
+    error = ""
+
     if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
+        email = request.form.get("email")
+        password = request.form.get("password")
 
-        if username in users and users[username]["role"] == "doctor" and users[username]["password"] == password:
-            session["user"] = username
-            session["role"] = "doctor"
+        # TEMP doctor credentials
+        if email == "doctor@gmail.com" and password == "doc123":
+            session["user"] = email          # REQUIRED
+            session["role"] = "doctor"       # REQUIRED
             return redirect(url_for("doctor_dashboard"))
-        msg = "Invalid credentials"
 
-    return render_template("doctor_login.html", msg=msg)
+        error = "Invalid email or password"
+
+    return render_template("doctor_login.html", error=error)
+
+
+
+
 
 @app.route("/doctor/dashboard")
 def doctor_dashboard():
-    if session.get("role") != "doctor":
+    if "user" not in session or session.get("role") != "doctor":
         return redirect(url_for("doctor_login"))
 
     doctor_name = session["user"]
-    doctor_appointments = [a for a in appointments if a["doctor"] == doctor_name]
+    doctor_appointments = [
+        a for a in appointments if a["doctor"] == doctor_name
+    ]
 
-    return render_template("doctor_dashboard.html", appointments=doctor_appointments)
+    return render_template(
+        "doctor_dashboard.html",
+        appointments=doctor_appointments
+    )
+
+
 
 # =================================================
 # ================= ADMIN MODULE ==================
@@ -147,13 +170,15 @@ def admin_login():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username == "admin" and password == "admin123":
+        if username == "admin@gmail.com" and password == "admin123":
             session["user"] = "admin"
             session["role"] = "admin"
             return redirect(url_for("admin_dashboard"))
+
         msg = "Invalid credentials"
 
     return render_template("admin_login.html", msg=msg)
+
 
 @app.route("/admin/dashboard")
 def admin_dashboard():
