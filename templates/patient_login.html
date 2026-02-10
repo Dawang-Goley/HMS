@@ -1,54 +1,70 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS | Patient Login</title>
 
-{% block content %}
-<section class="section" style="min-height:60vh; display:flex; justify-content:center; align-items:center;">
-    <div class="login-card-box" style="max-width:420px; width:100%;">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <h3 style="text-align:left; margin-bottom:8px;">Sign in to your account</h3>
-        <p style="font-size:14px; color:#777; margin-bottom:20px;">
-            Please enter your name and password to log in.
-        </p>
+    <!-- Your main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-        <form method="post">
-            <input
-                type="text"
-                name="username"
-                placeholder="Email"
-                required
-                style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;"
-            >
+    <style>
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#f7f9fb;
+        }
+    </style>
+</head>
+<body>
 
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                required
-                style="width:100%; padding:12px; margin-bottom:8px; border:1px solid #ddd; border-radius:4px;"
-            >
+<div class="login-card-box" style="max-width:420px; width:100%;">
 
-            <div style="text-align:left; margin-bottom:20px;">
-                <a href="#" style="font-size:13px; color:#00a8a8; text-decoration:none;">
-                    Forgot Password?
-                </a>
-            </div>
+    <h3 style="margin-bottom:10px;">Sign in to your account</h3>
+    <p style="font-size:14px; color:#777; margin-bottom:20px;">
+        Please enter your name and password to log in.
+    </p>
 
-            <div style="text-align:right;">
-                <button
-                    type="submit"
-                    class="login-btn"
-                >
-                    Login →
-                </button>
-            </div>
-        </form>
+    <form method="post">
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:4px;"
+        >
 
-        <p style="margin-top:25px; font-size:14px; text-align:center;">
-            Don't have an account yet?
-            <a href="/signup" style="color:#00a8a8; text-decoration:none;">
-                Create an account
-            </a>
-        </p>
+        <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            style="width:100%; padding:12px; margin-bottom:10px; border:1px solid #ddd; border-radius:4px;"
+        >
 
-    </div>
-</section>
-{% endblock %}
+        <a href="#" style="font-size:13px; color:#00a8a8; text-decoration:none;">
+            Forgot Password?
+        </a>
+
+        <div style="text-align:right; margin-top:25px;">
+            <button type="submit" class="login-btn">
+                Login →
+            </button>
+        </div>
+    </form>
+
+    <p style="margin-top:25px; font-size:14px; text-align:center;">
+        Don't have an account yet?
+        <a href="/signup" style="color:#00a8a8; text-decoration:none;">
+            Create an account
+        </a>
+    </p>
+
+</div>
+
+</body>
+</html>
